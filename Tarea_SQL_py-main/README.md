@@ -1,1 +1,0 @@
-# Tarea_SQL_py
