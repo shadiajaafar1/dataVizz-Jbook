@@ -1,0 +1,2740 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Tarea Errores Comunes al Crear Visualizaciones Interactivas &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'errores';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ferrores.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/errores.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Tarea Errores Comunes al Crear Visualizaciones Interactivas</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-necesarias">Librerías necesarias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-1-datos-co-2">Punto 1: Datos <span class="math notranslate nohighlight">\(CO_2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-2-diabetes-dataset">Punto 2: Diabetes Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-diabetes">EDA Diabetes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-datos-usando-las-diferentes-opciones-de-estimadores">Imputación de datos usando las diferentes opciones de estimadores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimadores-que-manejan-datos-faltantes">Estimadores que manejan datos faltantes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-datos-atipicos-para-cada-variable-en-el-dataset">Identificar datos atípicos para cada variable en el dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-los-datos-atipicos">Imputación de los datos atípicos</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="tarea-errores-comunes-al-crear-visualizaciones-interactivas">
+<h1>Tarea Errores Comunes al Crear Visualizaciones Interactivas<a class="headerlink" href="#tarea-errores-comunes-al-crear-visualizaciones-interactivas" title="Link to this heading">#</a></h1>
+<p>Por: Mariana Castañeda y Shadia Jaafar</p>
+<section id="librerias-necesarias">
+<h2>Librerías necesarias<a class="headerlink" href="#librerias-necesarias" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">zscore</span><span class="p">,</span> <span class="n">t</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span><span class="p">,</span> <span class="n">IterativeImputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">HistGradientBoostingClassifier</span><span class="p">,</span> <span class="n">StackingClassifier</span><span class="p">,</span> <span class="n">BaggingClassifier</span><span class="p">,</span> <span class="n">VotingClassifier</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ImportError</span><span class="g g-Whitespace">                               </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">12</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="ne">---&gt; </span><span class="mi">12</span> <span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span><span class="p">,</span> <span class="n">IterativeImputer</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+
+<span class="nn">File ~/Documents/dataVizz-Jbook/.venv/lib/python3.11/site-packages/sklearn/impute/__init__.py:18,</span> in <span class="ni">__getattr__</span><span class="nt">(name)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="k">def</span> <span class="fm">__getattr__</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;IterativeImputer&quot;</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">18</span>         <span class="k">raise</span> <span class="ne">ImportError</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>             <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is experimental and the API might change without any &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="s2">&quot;deprecation cycle. To use it, you need to explicitly import &quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>             <span class="s2">&quot;enable_iterative_imputer:</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span>             <span class="s2">&quot;from sklearn.experimental import enable_iterative_imputer&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>         <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>     <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;module </span><span class="si">{</span><span class="vm">__name__</span><span class="si">}</span><span class="s2"> has no attribute </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="ne">ImportError</span>: IterativeImputer is experimental and the API might change without any deprecation cycle. To use it, you need to explicitly import enable_iterative_imputer:
+<span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="punto-1-datos-co-2">
+<h2>Punto 1: Datos <span class="math notranslate nohighlight">\(CO_2\)</span><a class="headerlink" href="#punto-1-datos-co-2" title="Link to this heading">#</a></h2>
+<p>Iniciemos cargando los datos y observando qué columnas tenemos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/co2.csv&quot;</span><span class="p">)</span>
+<span class="n">co</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>1800</th>
+      <th>1801</th>
+      <th>1802</th>
+      <th>1803</th>
+      <th>1804</th>
+      <th>1805</th>
+      <th>1806</th>
+      <th>1807</th>
+      <th>1808</th>
+      <th>...</th>
+      <th>2005</th>
+      <th>2006</th>
+      <th>2007</th>
+      <th>2008</th>
+      <th>2009</th>
+      <th>2010</th>
+      <th>2011</th>
+      <th>2012</th>
+      <th>2013</th>
+      <th>2014</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.0529</td>
+      <td>0.0637</td>
+      <td>0.0854</td>
+      <td>0.154</td>
+      <td>0.242</td>
+      <td>0.294</td>
+      <td>0.412</td>
+      <td>0.350</td>
+      <td>0.316</td>
+      <td>0.299</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1.3800</td>
+      <td>1.2800</td>
+      <td>1.3000</td>
+      <td>1.460</td>
+      <td>1.480</td>
+      <td>1.560</td>
+      <td>1.790</td>
+      <td>1.680</td>
+      <td>1.730</td>
+      <td>1.960</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>3.2200</td>
+      <td>2.9900</td>
+      <td>3.1900</td>
+      <td>3.160</td>
+      <td>3.420</td>
+      <td>3.300</td>
+      <td>3.290</td>
+      <td>3.460</td>
+      <td>3.510</td>
+      <td>3.720</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Andorra</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>7.3000</td>
+      <td>6.7500</td>
+      <td>6.5200</td>
+      <td>6.430</td>
+      <td>6.120</td>
+      <td>6.120</td>
+      <td>5.870</td>
+      <td>5.920</td>
+      <td>5.900</td>
+      <td>5.830</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Angola</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.9800</td>
+      <td>1.1000</td>
+      <td>1.2000</td>
+      <td>1.180</td>
+      <td>1.230</td>
+      <td>1.240</td>
+      <td>1.250</td>
+      <td>1.330</td>
+      <td>1.250</td>
+      <td>1.290</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>187</th>
+      <td>Venezuela</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>6.1600</td>
+      <td>6.2200</td>
+      <td>5.8100</td>
+      <td>6.360</td>
+      <td>6.290</td>
+      <td>6.510</td>
+      <td>6.000</td>
+      <td>6.650</td>
+      <td>6.070</td>
+      <td>6.030</td>
+    </tr>
+    <tr>
+      <th>188</th>
+      <td>Vietnam</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>1.1600</td>
+      <td>1.2100</td>
+      <td>1.2200</td>
+      <td>1.360</td>
+      <td>1.470</td>
+      <td>1.610</td>
+      <td>1.700</td>
+      <td>1.570</td>
+      <td>1.610</td>
+      <td>1.800</td>
+    </tr>
+    <tr>
+      <th>189</th>
+      <td>Yemen</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.9740</td>
+      <td>1.0100</td>
+      <td>0.9640</td>
+      <td>0.999</td>
+      <td>1.070</td>
+      <td>0.993</td>
+      <td>0.811</td>
+      <td>0.749</td>
+      <td>0.997</td>
+      <td>0.865</td>
+    </tr>
+    <tr>
+      <th>190</th>
+      <td>Zambia</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.1900</td>
+      <td>0.1850</td>
+      <td>0.1520</td>
+      <td>0.166</td>
+      <td>0.186</td>
+      <td>0.194</td>
+      <td>0.206</td>
+      <td>0.249</td>
+      <td>0.261</td>
+      <td>0.288</td>
+    </tr>
+    <tr>
+      <th>191</th>
+      <td>Zimbabwe</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>0.8320</td>
+      <td>0.7960</td>
+      <td>0.7420</td>
+      <td>0.573</td>
+      <td>0.406</td>
+      <td>0.552</td>
+      <td>0.665</td>
+      <td>0.530</td>
+      <td>0.776</td>
+      <td>0.780</td>
+    </tr>
+  </tbody>
+</table>
+<p>192 rows × 216 columns</p>
+</div></div></div>
+</div>
+<p>Este dataset cuenta con 192 filas y 216 columnas. Además, podemos observar que cuenta con un gran número de datos nulos. Veamos esta proporción con más detalle.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nulos_columna</span> <span class="o">=</span> <span class="n">co</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proporción de datos nulos por columnas&quot;</span><span class="p">,</span> <span class="n">nulos_columna</span><span class="p">)</span>
+<span class="n">nulos_total</span> <span class="o">=</span> <span class="p">(</span><span class="n">co</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">co</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proporción de datos nulos en total&quot;</span><span class="p">,</span> <span class="n">nulos_total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Proporción de datos nulos por columnas country     0.000000
+1800       97.395833
+1801       97.395833
+1802       96.354167
+1803       97.395833
+             ...    
+2010        0.520833
+2011        0.520833
+2012        0.000000
+2013        0.000000
+2014        0.000000
+Length: 216, dtype: float64
+Proporción de datos nulos en total 58.774594907407405
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esto indica que el 58.77% de todos los datos del dataset son nulos.</p>
+<p>Ahora, realicemos un melt de ese dataframe</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">co</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">co</span><span class="p">,</span> <span class="n">id_vars</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="n">var_name</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="n">value_name</span><span class="o">=</span><span class="s2">&quot;co2&quot;</span><span class="p">)</span>
+<span class="n">co</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>co2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>1800</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>1800</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>1800</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Andorra</td>
+      <td>1800</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Angola</td>
+      <td>1800</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Procedemos a cargar el conjunto de datos <em>gm</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/lihkir/Uninorte/main/AppliedStatisticMS/DataVisualizationRPython/Lectures/Python/PythonDataSets/gapminder.csv&quot;</span><span class="p">)</span>
+<span class="n">gm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Country</th>
+      <th>Year</th>
+      <th>fertility</th>
+      <th>life</th>
+      <th>population</th>
+      <th>child_mortality</th>
+      <th>gdp</th>
+      <th>region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>1964</td>
+      <td>7.671</td>
+      <td>33.639</td>
+      <td>10474903.0</td>
+      <td>339.7</td>
+      <td>1182.0</td>
+      <td>South Asia</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Afghanistan</td>
+      <td>1965</td>
+      <td>7.671</td>
+      <td>34.152</td>
+      <td>10697983.0</td>
+      <td>334.1</td>
+      <td>1182.0</td>
+      <td>South Asia</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Afghanistan</td>
+      <td>1966</td>
+      <td>7.671</td>
+      <td>34.662</td>
+      <td>10927724.0</td>
+      <td>328.7</td>
+      <td>1168.0</td>
+      <td>South Asia</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Afghanistan</td>
+      <td>1967</td>
+      <td>7.671</td>
+      <td>35.170</td>
+      <td>11163656.0</td>
+      <td>323.3</td>
+      <td>1173.0</td>
+      <td>South Asia</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Afghanistan</td>
+      <td>1968</td>
+      <td>7.671</td>
+      <td>35.674</td>
+      <td>11411022.0</td>
+      <td>318.1</td>
+      <td>1187.0</td>
+      <td>South Asia</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10106</th>
+      <td>Åland</td>
+      <td>2002</td>
+      <td>NaN</td>
+      <td>81.800</td>
+      <td>26257.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Europe &amp; Central Asia</td>
+    </tr>
+    <tr>
+      <th>10107</th>
+      <td>Åland</td>
+      <td>2003</td>
+      <td>NaN</td>
+      <td>80.630</td>
+      <td>26347.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Europe &amp; Central Asia</td>
+    </tr>
+    <tr>
+      <th>10108</th>
+      <td>Åland</td>
+      <td>2004</td>
+      <td>NaN</td>
+      <td>79.880</td>
+      <td>26530.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Europe &amp; Central Asia</td>
+    </tr>
+    <tr>
+      <th>10109</th>
+      <td>Åland</td>
+      <td>2005</td>
+      <td>NaN</td>
+      <td>80.000</td>
+      <td>26766.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Europe &amp; Central Asia</td>
+    </tr>
+    <tr>
+      <th>10110</th>
+      <td>Åland</td>
+      <td>2006</td>
+      <td>NaN</td>
+      <td>80.100</td>
+      <td>26923.0</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Europe &amp; Central Asia</td>
+    </tr>
+  </tbody>
+</table>
+<p>10111 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>Este dataframe cuenta con 10111 filas y 8 variables.</p>
+<p>Ahora, debemos realizar un merge entre los dos conjuntos de datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">co</span><span class="p">,</span> <span class="n">gm</span><span class="p">,</span> <span class="n">left_index</span><span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span> <span class="s1">&#39;inner&#39;</span><span class="p">)</span>
+<span class="n">merged_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>co2</th>
+      <th>Country</th>
+      <th>Year</th>
+      <th>fertility</th>
+      <th>life</th>
+      <th>population</th>
+      <th>child_mortality</th>
+      <th>gdp</th>
+      <th>region</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>1800</td>
+      <td>NaN</td>
+      <td>Afghanistan</td>
+      <td>1964</td>
+      <td>7.671</td>
+      <td>33.639</td>
+      <td>10474903.0</td>
+      <td>339.7</td>
+      <td>1182.0</td>
+      <td>South Asia</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>1800</td>
+      <td>NaN</td>
+      <td>Afghanistan</td>
+      <td>1965</td>
+      <td>7.671</td>
+      <td>34.152</td>
+      <td>10697983.0</td>
+      <td>334.1</td>
+      <td>1182.0</td>
+      <td>South Asia</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>1800</td>
+      <td>NaN</td>
+      <td>Afghanistan</td>
+      <td>1966</td>
+      <td>7.671</td>
+      <td>34.662</td>
+      <td>10927724.0</td>
+      <td>328.7</td>
+      <td>1168.0</td>
+      <td>South Asia</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Andorra</td>
+      <td>1800</td>
+      <td>NaN</td>
+      <td>Afghanistan</td>
+      <td>1967</td>
+      <td>7.671</td>
+      <td>35.170</td>
+      <td>11163656.0</td>
+      <td>323.3</td>
+      <td>1173.0</td>
+      <td>South Asia</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Angola</td>
+      <td>1800</td>
+      <td>NaN</td>
+      <td>Afghanistan</td>
+      <td>1968</td>
+      <td>7.671</td>
+      <td>35.674</td>
+      <td>11411022.0</td>
+      <td>318.1</td>
+      <td>1187.0</td>
+      <td>South Asia</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Escogemos las columnas de interés para realizar los análisis de correlación.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">merged_df</span> <span class="o">=</span> <span class="n">merged_df</span><span class="p">[[</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;co2&#39;</span><span class="p">,</span> <span class="s1">&#39;fertility&#39;</span><span class="p">,</span> <span class="s1">&#39;life&#39;</span><span class="p">,</span> <span class="s1">&#39;population&#39;</span><span class="p">]]</span>
+<span class="n">merged_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>co2</th>
+      <th>fertility</th>
+      <th>life</th>
+      <th>population</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Afghanistan</td>
+      <td>1800</td>
+      <td>NaN</td>
+      <td>7.671</td>
+      <td>33.639</td>
+      <td>10474903.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Albania</td>
+      <td>1800</td>
+      <td>NaN</td>
+      <td>7.671</td>
+      <td>34.152</td>
+      <td>10697983.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Algeria</td>
+      <td>1800</td>
+      <td>NaN</td>
+      <td>7.671</td>
+      <td>34.662</td>
+      <td>10927724.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Andorra</td>
+      <td>1800</td>
+      <td>NaN</td>
+      <td>7.671</td>
+      <td>35.170</td>
+      <td>11163656.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Angola</td>
+      <td>1800</td>
+      <td>NaN</td>
+      <td>7.671</td>
+      <td>35.674</td>
+      <td>11411022.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>10106</th>
+      <td>Nicaragua</td>
+      <td>1852</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>81.800</td>
+      <td>26257.0</td>
+    </tr>
+    <tr>
+      <th>10107</th>
+      <td>Niger</td>
+      <td>1852</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>80.630</td>
+      <td>26347.0</td>
+    </tr>
+    <tr>
+      <th>10108</th>
+      <td>Nigeria</td>
+      <td>1852</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>79.880</td>
+      <td>26530.0</td>
+    </tr>
+    <tr>
+      <th>10109</th>
+      <td>North Korea</td>
+      <td>1852</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>80.000</td>
+      <td>26766.0</td>
+    </tr>
+    <tr>
+      <th>10110</th>
+      <td>Norway</td>
+      <td>1852</td>
+      <td>0.105</td>
+      <td>NaN</td>
+      <td>80.100</td>
+      <td>26923.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>10111 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>Veamos el diagrama de dispersión entre las emisiones de <span class="math notranslate nohighlight">\(CO_2\)</span> y la esperanza de vida a través de los años. En el hover, se encuentra el país y el tamaño de la burbuja depende del nivel de <span class="math notranslate nohighlight">\(CO_2\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="n">df_filtered</span> <span class="o">=</span> <span class="n">merged_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;co2&#39;</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_filtered</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;co2&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;life&#39;</span><span class="p">,</span> 
+                 <span class="n">animation_frame</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> 
+                 <span class="n">size</span><span class="o">=</span><span class="s1">&#39;co2&#39;</span><span class="p">,</span> 
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> 
+                 <span class="n">hover_name</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span>
+                 <span class="n">size_max</span><span class="o">=</span><span class="mi">70</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Relación entre CO2 y esperanza de vida&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>En este diagrama de dispersión no se observa una relación lineal entre las variables y una baja correlación. También, vemos que al pasar los años los niveles de <span class="math notranslate nohighlight">\(CO_2\)</span> de Estados Unidos y Alemania van en aumento. Mientras que los de Canadá se mantienen constantes. En cuanto a la esperanza de vida, vemos que este índice varía mucho a través del tiempo a pesar de que la concentración de <span class="math notranslate nohighlight">\(CO_2\)</span> se mantenga relativamente constante.</p>
+<p>Veamos el coeficiente de correlación entre estas variables para comprobar la ausencia de relación lineal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_filtered</span><span class="p">[[</span><span class="s1">&#39;co2&#39;</span><span class="p">,</span> <span class="s1">&#39;life&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>co2</th>
+      <th>life</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>co2</th>
+      <td>1.000000</td>
+      <td>0.003095</td>
+    </tr>
+    <tr>
+      <th>life</th>
+      <td>0.003095</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Tal como lo habíamos observado en el diagrama, las variables <span class="math notranslate nohighlight">\(CO_2\)</span> y esperanza de vida no tienen correlación lineal entre ellas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_filtered</span> <span class="o">=</span> <span class="n">merged_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;fertility&#39;</span><span class="p">,</span> <span class="s1">&#39;co2&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_filtered</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;co2&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;fertility&#39;</span><span class="p">,</span> 
+                 <span class="n">animation_frame</span><span class="o">=</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> 
+                 <span class="n">color</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> 
+                 <span class="n">hover_name</span><span class="o">=</span><span class="s1">&#39;country&#39;</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Relación entre CO2 y la fertilidad&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>En este diagrama de dispersión no se observa una relación lineal entre la concentración de <span class="math notranslate nohighlight">\(CO_2\)</span> y la fertilidad. Se observa que Estados Unidos es el país que registra los niveles más elevados de <span class="math notranslate nohighlight">\(CO_2\)</span> seguido de Alemania. Sin embargo, no es evidente la incidente entre los niveles de este gas con la fertilidad.</p>
+<p>Veamos el coeficiente de correlación entre estas variables para corroborar la ausencia de relación lineal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_filtered</span><span class="p">[[</span><span class="s1">&#39;co2&#39;</span><span class="p">,</span> <span class="s1">&#39;fertility&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>co2</th>
+      <th>fertility</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>co2</th>
+      <td>1.000000</td>
+      <td>0.007139</td>
+    </tr>
+    <tr>
+      <th>fertility</th>
+      <td>0.007139</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Como lo habíamos observado, no existe correlación lineal entre la concentración de <span class="math notranslate nohighlight">\(CO_2\)</span> y la fertilidad.</p>
+<p>Analicemos los coeficientes de correlación entre cada par de variables numéricas del dataframe con el fin buscar posibles relaciones lineales entre variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_num</span> <span class="o">=</span> <span class="n">merged_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;country&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">matriz_corr</span> <span class="o">=</span> <span class="n">df_num</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">matriz_corr</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s2">&quot;.2f&quot;</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Matriz de Correlación&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/d3c9e195c6f3f5f38bf2416cd0057ebc454313a59b334d15d9e7ab5123fd4507.png" src="_images/d3c9e195c6f3f5f38bf2416cd0057ebc454313a59b334d15d9e7ab5123fd4507.png" />
+</div>
+</div>
+<p>Vemos que solo hay un par de variables con una correlación fuerte negativa (fertilidad y esperanza de vida). Observemos su gráfico de dispersión.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_filtered</span> <span class="o">=</span> <span class="n">merged_df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;fertility&#39;</span><span class="p">,</span> <span class="s1">&#39;co2&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">])</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_filtered</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;fertility&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;life&#39;</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Relación entre la fertilidad y la esperanza de vida&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">renderer</span><span class="o">=</span><span class="s2">&quot;notebook&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<p>En este diagrama de dispersión podemos corroborar la fuerte relación lineal inversa que existe entre la fertilidad y la esperanza de vida. Observamos que a medidad de la fertilidad aumenta, la esperanza de vida disminuye.</p>
+</section>
+<section id="punto-2-diabetes-dataset">
+<h2>Punto 2: Diabetes Dataset<a class="headerlink" href="#punto-2-diabetes-dataset" title="Link to this heading">#</a></h2>
+<p>Iniciemos cargando el dataset de Diabetes</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/lihkir/Data/main/diabetes.csv&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pregnancies</th>
+      <th>Glucose</th>
+      <th>BloodPressure</th>
+      <th>SkinThickness</th>
+      <th>Insulin</th>
+      <th>BMI</th>
+      <th>DiabetesPedigreeFunction</th>
+      <th>Age</th>
+      <th>Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6</td>
+      <td>148</td>
+      <td>72</td>
+      <td>35</td>
+      <td>0</td>
+      <td>33.6</td>
+      <td>0.627</td>
+      <td>50</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>85</td>
+      <td>66</td>
+      <td>29</td>
+      <td>0</td>
+      <td>26.6</td>
+      <td>0.351</td>
+      <td>31</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8</td>
+      <td>183</td>
+      <td>64</td>
+      <td>0</td>
+      <td>0</td>
+      <td>23.3</td>
+      <td>0.672</td>
+      <td>32</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>89</td>
+      <td>66</td>
+      <td>23</td>
+      <td>94</td>
+      <td>28.1</td>
+      <td>0.167</td>
+      <td>21</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>137</td>
+      <td>40</td>
+      <td>35</td>
+      <td>168</td>
+      <td>43.1</td>
+      <td>2.288</td>
+      <td>33</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>763</th>
+      <td>10</td>
+      <td>101</td>
+      <td>76</td>
+      <td>48</td>
+      <td>180</td>
+      <td>32.9</td>
+      <td>0.171</td>
+      <td>63</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>764</th>
+      <td>2</td>
+      <td>122</td>
+      <td>70</td>
+      <td>27</td>
+      <td>0</td>
+      <td>36.8</td>
+      <td>0.340</td>
+      <td>27</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>765</th>
+      <td>5</td>
+      <td>121</td>
+      <td>72</td>
+      <td>23</td>
+      <td>112</td>
+      <td>26.2</td>
+      <td>0.245</td>
+      <td>30</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>766</th>
+      <td>1</td>
+      <td>126</td>
+      <td>60</td>
+      <td>0</td>
+      <td>0</td>
+      <td>30.1</td>
+      <td>0.349</td>
+      <td>47</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>767</th>
+      <td>1</td>
+      <td>93</td>
+      <td>70</td>
+      <td>31</td>
+      <td>0</td>
+      <td>30.4</td>
+      <td>0.315</td>
+      <td>23</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>768 rows × 9 columns</p>
+</div></div></div>
+</div>
+<p>Este dataset cuenta con 768 filas y 9 columnas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Glucose&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;Glucose&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NAN</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;BloodPressure&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;BloodPressure&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NAN</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;SkinThickness&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;SkinThickness&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NAN</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;Insulin&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;Insulin&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NAN</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;BMI&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;BMI&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">NAN</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pregnancies                  0.000000
+Glucose                      0.651042
+BloodPressure                4.557292
+SkinThickness               29.557292
+Insulin                     48.697917
+BMI                          1.432292
+DiabetesPedigreeFunction     0.000000
+Age                          0.000000
+Outcome                      0.000000
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eda-diabetes">
+<h2>EDA Diabetes<a class="headerlink" href="#eda-diabetes" title="Link to this heading">#</a></h2>
+<p>Iniciemos identificando los tipos de variables.
+Respuesta: Outcome
+Predictoras: Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 768 entries, 0 to 767
+Data columns (total 9 columns):
+ #   Column                    Non-Null Count  Dtype  
+---  ------                    --------------  -----  
+ 0   Pregnancies               768 non-null    int64  
+ 1   Glucose                   763 non-null    float64
+ 2   BloodPressure             733 non-null    float64
+ 3   SkinThickness             541 non-null    float64
+ 4   Insulin                   394 non-null    float64
+ 5   BMI                       757 non-null    float64
+ 6   DiabetesPedigreeFunction  768 non-null    float64
+ 7   Age                       768 non-null    int64  
+ 8   Outcome                   768 non-null    int64  
+dtypes: float64(6), int64(3)
+memory usage: 54.1 KB
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vemos que todas las variables son numéricas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Outcome&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0      1
+1      0
+2      1
+3      0
+4      1
+      ..
+763    0
+764    0
+765    0
+766    1
+767    0
+Name: Outcome, Length: 768, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vemos que la variable respuesta es dicotómica. Donde:</p>
+<p><strong>1: Tiene diabetes</strong> <br />
+<strong>0: No tiene diabetes</strong></p>
+<p>Por tanto, tenemos un problema de clasificación</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pregnancies</th>
+      <th>Glucose</th>
+      <th>BloodPressure</th>
+      <th>SkinThickness</th>
+      <th>Insulin</th>
+      <th>BMI</th>
+      <th>DiabetesPedigreeFunction</th>
+      <th>Age</th>
+      <th>Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>768.000000</td>
+      <td>763.000000</td>
+      <td>733.000000</td>
+      <td>541.000000</td>
+      <td>394.000000</td>
+      <td>757.000000</td>
+      <td>768.000000</td>
+      <td>768.000000</td>
+      <td>768.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>3.845052</td>
+      <td>121.686763</td>
+      <td>72.405184</td>
+      <td>29.153420</td>
+      <td>155.548223</td>
+      <td>32.457464</td>
+      <td>0.471876</td>
+      <td>33.240885</td>
+      <td>0.348958</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.369578</td>
+      <td>30.535641</td>
+      <td>12.382158</td>
+      <td>10.476982</td>
+      <td>118.775855</td>
+      <td>6.924988</td>
+      <td>0.331329</td>
+      <td>11.760232</td>
+      <td>0.476951</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>0.000000</td>
+      <td>44.000000</td>
+      <td>24.000000</td>
+      <td>7.000000</td>
+      <td>14.000000</td>
+      <td>18.200000</td>
+      <td>0.078000</td>
+      <td>21.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>1.000000</td>
+      <td>99.000000</td>
+      <td>64.000000</td>
+      <td>22.000000</td>
+      <td>76.250000</td>
+      <td>27.500000</td>
+      <td>0.243750</td>
+      <td>24.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>3.000000</td>
+      <td>117.000000</td>
+      <td>72.000000</td>
+      <td>29.000000</td>
+      <td>125.000000</td>
+      <td>32.300000</td>
+      <td>0.372500</td>
+      <td>29.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.000000</td>
+      <td>141.000000</td>
+      <td>80.000000</td>
+      <td>36.000000</td>
+      <td>190.000000</td>
+      <td>36.600000</td>
+      <td>0.626250</td>
+      <td>41.000000</td>
+      <td>1.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>17.000000</td>
+      <td>199.000000</td>
+      <td>122.000000</td>
+      <td>99.000000</td>
+      <td>846.000000</td>
+      <td>67.100000</td>
+      <td>2.420000</td>
+      <td>81.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<ul class="simple">
+<li><p>‘Pregnancies’ varía de 0 a 17, lo que indica el número de embarazos. En promedio, se tienen 3.84 embarazos con una desviación de 3.36.</p></li>
+<li><p>‘Glucose’, ‘BloodPressure’, ‘SkinThickness’, ‘Insulin’, y ‘BMI’ muestran medidas clínicas con una amplia gama de valores, lo que sugiere diversidad en las condiciones de salud de los individuos.</p></li>
+<li><p>La función de pedigrí de diabetes (‘DiabetesPedigreeFunction’) tiene un promedio de alrededor de 0.47, pero varía significativamente, lo que indica diferencias en los factores de riesgo genético de la diabetes.</p></li>
+<li><p>La edad promedio es de aproximadamente 33 años, con una amplia gama de 21 a 81 años.</p></li>
+<li><p>‘Outcome’ tiene valores de 0 y 1, lo que sugiere que es una variable binaria, probablemente indicando la presencia o ausencia de diabetes.</p></li>
+</ul>
+<p>Identificamos los datos nulos por columnas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;viridis&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
+</pre></div>
+</div>
+<img alt="_images/88ba104dd9651fea007deb02488e14dbff3a5fd98b77f535740b783b4d2c2e86.png" src="_images/88ba104dd9651fea007deb02488e14dbff3a5fd98b77f535740b783b4d2c2e86.png" />
+</div>
+</div>
+<p>Vemos que la columna con más datos faltantes es Insulin y SkinThickness. Mientras que Preganancies, DiabetesPedigreeFunction, Age y Outcome no tiene datos faltantes.</p>
+</section>
+<section id="imputacion-de-datos-usando-las-diferentes-opciones-de-estimadores">
+<h2>Imputación de datos usando las diferentes opciones de estimadores<a class="headerlink" href="#imputacion-de-datos-usando-las-diferentes-opciones-de-estimadores" title="Link to this heading">#</a></h2>
+<p>Iniciemos definiendo las variables explicativas y la variable respuesta</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s1">&#39;Outcome&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Outcome&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Definimos los clasificadores que usaremos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">classifiers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Decision Tree&quot;</span><span class="p">:</span> <span class="n">DecisionTreeClassifier</span><span class="p">(),</span>
+    <span class="s2">&quot;Random Forest&quot;</span><span class="p">:</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span>
+    <span class="s2">&quot;Logistic Regression&quot;</span><span class="p">:</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;accuracy&#39;</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">clf_name</span><span class="p">,</span> <span class="n">clf</span> <span class="ow">in</span> <span class="n">classifiers</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">scores</span><span class="p">[</span><span class="n">clf_name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">strategy</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;median&#39;</span><span class="p">,</span> <span class="s1">&#39;most_frequent&#39;</span><span class="p">):</span>
+        <span class="n">pipe</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">SimpleImputer</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="n">strategy</span><span class="p">),</span> <span class="n">StandardScaler</span><span class="p">(),</span> <span class="n">clf</span><span class="p">)</span>
+        <span class="n">scores</span><span class="p">[</span><span class="n">clf_name</span><span class="p">][</span><span class="n">strategy</span><span class="p">]</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+    <span class="n">iterative_pipe</span> <span class="o">=</span> <span class="n">make_pipeline</span><span class="p">(</span><span class="n">IterativeImputer</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">StandardScaler</span><span class="p">(),</span> <span class="n">clf</span><span class="p">)</span>
+    <span class="n">scores</span><span class="p">[</span><span class="n">clf_name</span><span class="p">][</span><span class="s1">&#39;Iterative&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">iterative_pipe</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Visualizamos los resultados</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">bar_width</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">scores</span><span class="p">[</span><span class="s1">&#39;Logistic Regression&#39;</span><span class="p">]))</span>
+<span class="n">opacity</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">clf_name</span><span class="p">,</span> <span class="n">clf_scores</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">scores</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+    <span class="n">bar_positions</span> <span class="o">=</span> <span class="n">index</span> <span class="o">+</span> <span class="n">bar_width</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">bar_positions</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">clf_scores</span><span class="o">.</span><span class="n">values</span><span class="p">()),</span> <span class="n">bar_width</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">opacity</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">clf_name</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Métodos de imputación&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Accuracy&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Comparación de métodos de imputación con diferentes clasificadores&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">index</span> <span class="o">+</span> <span class="n">bar_width</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">((</span><span class="s1">&#39;Mean&#39;</span><span class="p">,</span> <span class="s1">&#39;Median&#39;</span><span class="p">,</span> <span class="s1">&#39;Most frequent&#39;</span><span class="p">,</span> <span class="s1">&#39;Iterative&#39;</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/331d6f264044905024893b25b2ef984e12f9cdb0449ab682e08f10c71b8fb079.png" src="_images/331d6f264044905024893b25b2ef984e12f9cdb0449ab682e08f10c71b8fb079.png" />
+</div>
+</div>
+<p>El gráfico muestra que la Regresión Logística consistentemente tiene la precisión más alta en comparación con el Árbol de Decisión y el Random Forest a través de todos los métodos de imputación. El método de imputación iterativa tiene un rendimiento ligeramente inferior para los clasificadores de Árbol de Decisión y Random Forest. Los métodos de imputación media y mediana ofrecen resultados similares entre sí y son los que logran la mejor precisión para el Random Forest y el Árbol de Decisión. En todos los métodos de imputación, la Regresión Logística mantiene una ventaja clara, lo que sugiere que es más robusta a la variación en la imputación de los datos faltantes para este conjunto de datos.</p>
+<section id="estimadores-que-manejan-datos-faltantes">
+<h3>Estimadores que manejan datos faltantes<a class="headerlink" href="#estimadores-que-manejan-datos-faltantes" title="Link to this heading">#</a></h3>
+<p>Debido a que tenemos un problema de clasificación y teniendo en cuenta la documentación de la librería Scikit-learn, los estimadores para realizar la imputación adecuados son:</p>
+<ul class="simple">
+<li><p>BaggingClassifier</p></li>
+<li><p>DecisionTreeClassifier</p></li>
+<li><p>HistGradientBoostingClassifier</p></li>
+<li><p>RandomForestClassifier</p></li>
+<li><p>StackingClassifier</p></li>
+<li><p>VotingClassifier</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Bagging Clasifier</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bagging_clf</span> <span class="o">=</span> <span class="n">BaggingClassifier</span><span class="p">(</span>
+    <span class="n">DecisionTreeClassifier</span><span class="p">(),</span>
+    <span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> 
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="n">bagging_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">bagging_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.7597
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observamos que el clasificador Bagging (usando árboles de desición como clasificador base), obtuvo un accuracy del 75%.</p>
+<ul class="simple">
+<li><p>DecisionTreeClassifier</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.74
+</pre></div>
+</div>
+</div>
+</div>
+<p>En el caso del modelo de árboles de desición, se obtuvo un score similar al clasificador anterior (74%).</p>
+<ul class="simple">
+<li><p>HistGradientBoostingClassifier</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gradient</span> <span class="o">=</span> <span class="n">HistGradientBoostingClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">gradient</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">gradient</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.73
+</pre></div>
+</div>
+</div>
+</div>
+<p>En cuanto al modelo de HistGradientBoostingClassifier se obtuvo un rendimiento ligeramente inferior a los anteriores con un 73%.</p>
+<ul class="simple">
+<li><p>RandomForestClassifier</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forest</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">forest</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">forest</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.73
+</pre></div>
+</div>
+</div>
+</div>
+<p>Con el modelo de Random Forest se obtuvo el mismo score (73%) que el modelo anterior</p>
+<ul class="simple">
+<li><p>StackingClassifier</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">base_learners</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;rf&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;hgbc&#39;</span><span class="p">,</span> <span class="n">HistGradientBoostingClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;dt&#39;</span><span class="p">,</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">))</span>
+<span class="p">]</span>
+
+<span class="n">meta_learner</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+
+<span class="n">stacking_clf</span> <span class="o">=</span> <span class="n">StackingClassifier</span><span class="p">(</span><span class="n">estimators</span><span class="o">=</span><span class="n">base_learners</span><span class="p">,</span> <span class="n">final_estimator</span><span class="o">=</span><span class="n">meta_learner</span><span class="p">)</span>
+
+<span class="n">stacking_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">stacking_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.74
+</pre></div>
+</div>
+</div>
+</div>
+<p>En cuanto a este modelo, se obtiene el mismo score que el modelo de árbol de decisión. A pesar de que este combine varios estimadores, no se ve una mejora significativa en el score de clasificación con respecto a los clasificadores anteriores.</p>
+<ul class="simple">
+<li><p>VotingClassifier</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt_clf</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">rf_clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">hgbc_clf</span> <span class="o">=</span> <span class="n">HistGradientBoostingClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">voting_clf</span> <span class="o">=</span> <span class="n">VotingClassifier</span><span class="p">(</span>
+    <span class="n">estimators</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;dt&#39;</span><span class="p">,</span> <span class="n">dt_clf</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;rf&#39;</span><span class="p">,</span> <span class="n">rf_clf</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;hgbc&#39;</span><span class="p">,</span> <span class="n">hgbc_clf</span><span class="p">)],</span>
+    <span class="n">voting</span><span class="o">=</span><span class="s1">&#39;soft&#39;</span><span class="p">)</span>
+
+<span class="n">voting_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">voting_clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Accuracy: 0.75
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vemos que en general los modelos que soportan los datos faltantes tienen rendimientos similares con este conjunto de datos.</p>
+</section>
+<section id="identificar-datos-atipicos-para-cada-variable-en-el-dataset">
+<h3>Identificar datos atípicos para cada variable en el dataset<a class="headerlink" href="#identificar-datos-atipicos-para-cada-variable-en-el-dataset" title="Link to this heading">#</a></h3>
+<p>Test de Rosner, Dixon, Grubbs, Hampel, Percentiles, Boxplots, Histograms, Descriptivos</p>
+<p>Iniciemos obervando los boxplots de las variables</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">df</span><span class="o">.</span><span class="n">boxplot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Boxplot de Variables&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/669d2102a68dfd2f95a5b438a478ce0cbf34a5703eceb0b772d65d96d1de03d3.png" src="_images/669d2102a68dfd2f95a5b438a478ce0cbf34a5703eceb0b772d65d96d1de03d3.png" />
+</div>
+</div>
+<p><strong>Pregnancies:</strong> Esta variable tiene una mediana baja y una distribución relativamente simétrica alrededor de la mediana. Hay unos pocos valores atípicos en el extremo superior, lo que indica que hay algunas observaciones con un número de embarazos significativamente mayor que el resto.</p>
+<p><strong>Glucose:</strong> La mediana está cerca del centro del box, lo que sugiere una distribución simétrica. No se presentan datos atípicos.</p>
+<p><strong>BloodPressure:</strong> La mediana parece estar ligeramente sesgada hacia el cuartil inferior, y hay algunos valores atípicos en ambos extremos. Esto sugiere variabilidad en la presión sanguínea, con algunos casos inusualmente altos y bajos.</p>
+<p><strong>SkinThickness:</strong> La variable tiene una mediana baja y algunos datos atípicos en el extremo superior, lo que indica que la mayoría de los valores son bajos, pero algunos individuos tienen medidas de grosor de piel significativamente más altas.</p>
+<p><strong>Insulin:</strong> Esta variable muestra una distribución sesgada  y una gran cantidad de valores atípicos altos. Esto sugiere que mientras la mayoría de las observaciones tienen niveles bajos de insulina, hay un subconjunto significativo con niveles mucho más altos.</p>
+<p><strong>BMI:</strong> El índice de masa corporal tiene una mediana centrada y algunos valores atípicos.</p>
+<p><strong>DiabetesPedigreeFunction:</strong> La mediana está cerca del cuartil inferior y hay varios valores atípicos, lo que sugiere que mientras la mayoría de las observaciones tienen valores bajos para esta función, hay casos que se desvían significativamente de la mediana.</p>
+<p><strong>Age:</strong> La edad tiene una distribución que parece estar sesgada hacia la derecha, con la mediana más cerca del cuartil inferior y algunos valores atípicos en el extremo superior, lo que indica la presencia de individuos significativamente más viejos en comparación con la población general del conjunto de datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+
+<span class="c1"># Crear un histograma para cada variable numérica en el DataFrame</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> 
+    <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Histograma de </span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/062fe22bca86c1cc78e6b897d445dbae74a75080c9f3b7f8a3d662aa65cf0275.png" src="_images/062fe22bca86c1cc78e6b897d445dbae74a75080c9f3b7f8a3d662aa65cf0275.png" />
+</div>
+</div>
+<p><strong>Pregnancies:</strong> La mayoría de las observaciones caen entre 0 y 5, con una disminución notable en la frecuencia a medida que aumenta el número de embarazos. Esto indica que la mayoría de las personas en este conjunto de datos han estado embarazadas pocas veces. Además, la distribución presenta un fuerte sesgo hacia la derecha.</p>
+<p><strong>Glucose:</strong> La distribución de la glucosa parece ser aproximadamente normal, con la mayoría de las observaciones agrupadas alrededor de un rango medio.</p>
+<p><strong>BloodPressure:</strong> La distribución de la presión sanguínea también parece ser aproximadamente normal, sugiriendo que la mayoría de las personas tienen una presión sanguínea dentro de un rango considerado normal.</p>
+<p><strong>SkinThickness:</strong> El grosor de la piel muestra una distribución con una leve cola hacia la derecha. La mayoría de las mediciones están concentradas en el extremo inferior, pero hay un número significativo de observaciones con mediciones más altas.</p>
+<p><strong>Insuline:</strong> La insulina muestra una distribución con una cola muy larga hacia la derecha, indicando que la mayoría de las personas tienen niveles bajos, pero hay casos con niveles extremadamente altos de insulina.</p>
+<p><strong>BMI:</strong> El índice de masa corporal parece seguir una distribución aproximadamente normal, con la mayoría de las observaciones en el rango de 20 a 40, que abarca desde un peso normal hasta obesidad moderada.</p>
+<p><strong>DiabetesPedigreeFunction:</strong> Esta variable muestra una distribución con una cola hacia la derecha, donde la mayoría de las observaciones tienen valores bajos, pero hay algunos valores muy altos.</p>
+<p><strong>Age:</strong> La edad tiene una distribución que se inclina hacia la izquierda, con un pico en las edades más jóvenes y disminuyendo conforme la edad aumenta.</p>
+<ul class="simple">
+<li><p><strong>Test de Rosner</strong>
+Se basa en la comparación de los residuos estandarizados de los datos con un valor crítico calculado a partir de una distribución t de Student.</p></li>
+</ul>
+<p><strong>Pasos:</strong></p>
+<ol class="arabic simple">
+<li><p>Se calculan los residuos estandarizados para cada observación en el conjunto de datos.</p></li>
+<li><p>Se identifica el residuo estandarizado con el valor absoluto máximo entre todos los residuos estandarizados calculados.</p></li>
+<li><p>Se calcula el estadístico de Rosner dividiendo el valor absoluto máximo del residuo estandarizado por la raíz cuadrada de 1 más el cuadrado de ese mismo residuo estandarizado.</p></li>
+<li><p>Se compara el estadístico de Rosner calculado con un valor crítico obtenido a partir de la distribución t de Student. Este valor crítico depende del tamaño de la muestra y del nivel de significancia seleccionado.</p></li>
+<li><p>Si el valor del estadístico de Rosner es mayor que el valor crítico, se considera que hay al menos un valor atípico en los datos.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">rosner_outliers_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+    <span class="n">outliers_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">residuals</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">))</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">ddof</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">abs_resid_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">residuals</span><span class="p">))</span>
+        <span class="n">critical_value</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">),</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">rosner_value</span> <span class="o">=</span> <span class="n">abs_resid_max</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">abs_resid_max</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">cond</span> <span class="o">=</span> <span class="n">rosner_value</span> <span class="o">&gt;</span> <span class="n">critical_value</span>
+        <span class="n">outliers_indices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="n">cond</span><span class="p">)</span><span class="o">.</span><span class="n">nonzero</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">outliers</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">outliers_indices</span><span class="p">]</span>
+        <span class="n">outliers_dict</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">outliers</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">outliers_dict</span>
+
+
+<span class="n">outliers_dict</span> <span class="o">=</span> <span class="n">rosner_outliers_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores atípicos según el test de Rosner:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">column</span><span class="p">,</span> <span class="n">outliers</span> <span class="ow">in</span> <span class="n">outliers_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Columna &#39;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">outliers</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores atípicos según el test de Rosner:
+Columna &#39;Pregnancies&#39;: []
+Columna &#39;Glucose&#39;: []
+Columna &#39;BloodPressure&#39;: []
+Columna &#39;SkinThickness&#39;: []
+Columna &#39;Insulin&#39;: []
+Columna &#39;BMI&#39;: []
+Columna &#39;DiabetesPedigreeFunction&#39;: [0.627]
+Columna &#39;Age&#39;: [50]
+Columna &#39;Outcome&#39;: []
+</pre></div>
+</div>
+</div>
+</div>
+<p>Usando este test se identificaron 2 datos atípicos.</p>
+<ul class="simple">
+<li><p>Test de Dixon</p></li>
+</ul>
+<p>Este test compara las diferencias entre el valor más extremo y los valores adyacentes en la muestra para determinar si alguno de estos valores es un valor atípico.</p>
+<p><strong>Pasos:</strong></p>
+<ol class="arabic simple">
+<li><p>Se ordenan los datos en orden ascendente o descendente.</p></li>
+<li><p>Se calcula la diferencia entre el valor más extremo y los valores adyacentes en la muestra. Para el extremo inferior, se calcula la diferencia entre el valor más bajo y el segundo valor más bajo. Para el extremo superior, se calcula la diferencia entre el valor más alto y el segundo valor más alto.</p></li>
+<li><p>Se calcula el estadístico Q el cual se define como la diferencia dividida por el rango de la muestra.</p></li>
+<li><p>Se compara el estadístico Q calculado con valores críticos.</p></li>
+<li><p>Si el estadístico Q calculado es mayor que el valor crítico correspondiente, se rechaza la hipótesis nula y se considera que hay un valor atípico en la muestra.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dixon_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">):</span>
+    <span class="n">sorted_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">sorted_data</span><span class="p">)</span>
+    
+    <span class="n">Q</span> <span class="o">=</span> <span class="p">(</span><span class="n">sorted_data</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">sorted_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">sorted_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">sorted_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">Q_critical_low</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="n">alpha</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">),</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">side</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="s1">&#39;low&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">Q</span> <span class="o">&lt;</span> <span class="n">Q_critical_low</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sorted_data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">Q</span> <span class="o">=</span> <span class="p">(</span><span class="n">sorted_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">sorted_data</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="n">sorted_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">sorted_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">Q_critical_high</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">),</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">side</span> <span class="ow">in</span> <span class="p">(</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="s1">&#39;high&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">Q</span> <span class="o">&lt;</span> <span class="n">Q_critical_high</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">sorted_data</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">dixon_outliers_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">side</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">):</span>
+    <span class="n">outliers_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">outlier</span> <span class="o">=</span> <span class="n">dixon_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">side</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">outlier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">outliers_dict</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">outlier</span>
+    <span class="k">return</span> <span class="n">outliers_dict</span>
+
+<span class="n">outliers_dict</span> <span class="o">=</span> <span class="n">dixon_outliers_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores atípicos según el test de Dixon:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">column</span><span class="p">,</span> <span class="n">outlier</span> <span class="ow">in</span> <span class="n">outliers_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Columna &#39;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">outlier</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores atípicos según el test de Dixon:
+Columna &#39;Pregnancies&#39;: 17
+Columna &#39;DiabetesPedigreeFunction&#39;: 2.42
+Columna &#39;Age&#39;: 81
+Columna &#39;Outcome&#39;: 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Usando este Test se pudieron identificar 3 datos atípicos.</p>
+<ul class="simple">
+<li><p>Test de Grubbs</p></li>
+</ul>
+<p>Este test se basa en la comparación del valor más extremo en la muestra con los demás valores para determinar si este valor es estadísticamente significativamente diferente y, por lo tanto, un posible valor atípico.</p>
+<ol class="arabic simple">
+<li><p>Se calcula la estadística de Grubbs para el valor más extremo en la muestra.
+Fórmula:</p></li>
+</ol>
+<p>\begin{equation*}
+G = \frac{|X_i - \bar{X}|}{s}
+\end{equation*}</p>
+<ol class="arabic simple" start="2">
+<li><p>Se compara la estadística de Grubbs calculada con el valor crítico correspondiente obtenido de tablas estadísticas o fórmulas específicas según el tamaño de la muestra y el nivel de significancia seleccionado. El valor crítico se calcula bajo la hipótesis nula de que no hay valores atípicos en la muestra.</p></li>
+<li><p>Si el estadístico de Grubbs calculado es mayor que el valor crítico, se rechaza la hipótesis nula y se considera que el valor más extremo en la muestra es un valor atípico.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">grubbs_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+    <span class="n">z_scores</span> <span class="o">=</span> <span class="n">zscore</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">threshold</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">ppf</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">alpha</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">n</span><span class="p">),</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">max_z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">z_scores</span><span class="p">))</span>
+    
+    <span class="k">if</span> <span class="n">max_z</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">z_scores</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="kc">None</span>
+
+<span class="k">def</span> <span class="nf">grubbs_outliers_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">):</span>
+    <span class="n">outliers_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+        <span class="n">outlier</span> <span class="o">=</span> <span class="n">grubbs_test</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">alpha</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">outlier</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">outliers_dict</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">outlier</span>
+    <span class="k">return</span> <span class="n">outliers_dict</span>
+
+
+
+<span class="n">outliers_dict</span> <span class="o">=</span> <span class="n">grubbs_outliers_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores atípicos según el test de Grubbs:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">column</span><span class="p">,</span> <span class="n">outlier</span> <span class="ow">in</span> <span class="n">outliers_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Columna &#39;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">outlier</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores atípicos según el test de Grubbs:
+Columna &#39;DiabetesPedigreeFunction&#39;: 2.42
+Columna &#39;Age&#39;: 81
+</pre></div>
+</div>
+</div>
+</div>
+<p>Usando este test se volvieron a identificar los mismos datos atípicos que en el test anterior.</p>
+<ul class="simple">
+<li><p>Test de Hampel</p></li>
+</ul>
+<p>Es una técnica robusta utilizada para detectar valores atípicos en una serie de datos univariados. Es menos sensible a datos atípicos y puede manejar mejor la presencia de valores extremos.</p>
+<ol class="arabic simple">
+<li><p>Se define una ventana móvil de un tamaño especificado. Esta ventana se desliza a lo largo de la serie de datos, tomando una cierta cantidad de puntos de datos en cada paso.</p></li>
+<li><p>Para cada posición de la ventana móvil, se calcula la mediana de los datos dentro de la ventana y la desviación mediana absoluta (MAD) de esos datos. La MAD es una medida robusta de la dispersión de los datos que se calcula utilizando las diferencias absolutas entre los datos y su mediana.</p></li>
+<li><p>Se define un umbral de detección, que es un múltiplo de la MAD calculada en el paso anterior.</p></li>
+<li><p>Para cada punto de datos en la serie, se compara su valor con la mediana de los datos en la ventana móvil correspondiente y se calcula la distancia en unidades de la MAD. Si esta distancia es mayor que el umbral de detección, el punto de datos se identifica como un valor atípico.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hampel_filter</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">median</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="n">window_size</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+    <span class="n">deviation</span> <span class="o">=</span> <span class="n">data</span> <span class="o">-</span> <span class="n">median</span>
+    <span class="n">sigma</span> <span class="o">=</span> <span class="n">deviation</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="n">window_size</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+    <span class="n">outliers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">deviation</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">n_sigma</span> <span class="o">*</span> <span class="n">sigma</span>
+    <span class="k">return</span> <span class="n">outliers</span>
+
+<span class="k">def</span> <span class="nf">hampel_outliers_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">window_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_sigma</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">outliers_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">outliers</span> <span class="o">=</span> <span class="n">hampel_filter</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">],</span> <span class="n">window_size</span><span class="p">,</span> <span class="n">n_sigma</span><span class="p">)</span>
+        <span class="n">column_outliers</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">][</span><span class="n">outliers</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">column_outliers</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">outliers_dict</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">column_outliers</span>
+    <span class="k">return</span> <span class="n">outliers_dict</span>
+
+<span class="n">outliers_dict</span> <span class="o">=</span> <span class="n">hampel_outliers_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores atípicos según el filtro de Hampel:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">column</span><span class="p">,</span> <span class="n">outliers</span> <span class="ow">in</span> <span class="n">outliers_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Columna &#39;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">outliers</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores atípicos según el filtro de Hampel:
+</pre></div>
+</div>
+</div>
+</div>
+<p>No se identificaron datos atípicos usando este test.</p>
+<ul class="simple">
+<li><p>Percentiles</p></li>
+</ul>
+<p>Es una técnica que se basa en los percentiles de una distribución para identificar valores que están por encima o por debajo de ciertos umbrales predefinidos.</p>
+<p><strong>Pasos:</strong></p>
+<ol class="arabic simple">
+<li><p>Se calculan los percentiles de la distribución de datos. En este caso se escogió el percentil 5 (P5) el cual representa el valor por debajo del cual cae el 5% de los datos, y el percentil 95 (P95) el cual representa el valor por debajo del cual cae el 95% de los datos.</p></li>
+<li><p>Se definen umbrales utilizando los percentiles calculados.</p></li>
+<li><p>Se identifican los valores que están por debajo del percentil 5 o por encima del percentil 95 como valores atípicos. Estos valores están significativamente por debajo o por encima de la mayoría de los datos y se consideran extremos en relación con la distribución general.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">percentile_outliers_df</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">lower_percentile</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">upper_percentile</span><span class="o">=</span><span class="mi">95</span><span class="p">):</span>
+    <span class="n">outliers_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">column</span><span class="p">]</span>
+        <span class="n">lower_threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">lower_percentile</span><span class="p">)</span>
+        <span class="n">upper_threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">upper_percentile</span><span class="p">)</span>
+        <span class="n">column_outliers</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span> <span class="o">&lt;</span> <span class="n">lower_threshold</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">data</span> <span class="o">&gt;</span> <span class="n">upper_threshold</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">column_outliers</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">outliers_dict</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">column_outliers</span>
+    <span class="k">return</span> <span class="n">outliers_dict</span>
+
+<span class="n">outliers_dict</span> <span class="o">=</span> <span class="n">percentile_outliers_df</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valores atípicos según percentiles:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">column</span><span class="p">,</span> <span class="n">outliers</span> <span class="ow">in</span> <span class="n">outliers_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Columna &#39;</span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">outliers</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valores atípicos según percentiles:
+Columna &#39;Pregnancies&#39;: [11, 13, 11, 13, 13, 15, 17, 11, 12, 12, 11, 13, 14, 13, 12, 13, 12, 12, 12, 14, 12, 13, 11, 11, 12, 11, 11, 13, 11, 11, 13, 11, 13, 12]
+Columna &#39;DiabetesPedigreeFunction&#39;: [2.288, 0.134, 1.441, 1.39, 1.893, 1.781, 0.14, 0.14, 0.102, 0.13, 1.222, 0.088, 0.096, 1.4, 0.085, 1.189, 0.137, 0.084, 1.321, 0.136, 1.224, 0.101, 2.329, 0.089, 1.318, 1.213, 0.092, 1.353, 0.078, 1.136, 0.128, 1.224, 1.391, 0.129, 0.123, 0.127, 0.122, 1.476, 0.137, 2.137, 1.731, 1.268, 1.6, 0.135, 1.191, 0.108, 1.138, 2.42, 0.126, 1.159, 1.144, 0.107, 1.251, 0.126, 0.121, 0.085, 0.129, 1.154, 1.699, 0.088, 0.1, 1.258, 0.138, 1.282, 1.698, 1.461, 0.115, 0.134, 0.133, 1.162, 1.292, 1.394, 0.127, 0.128, 0.118, 0.121, 1.174, 1.182]
+Columna &#39;Age&#39;: [59, 60, 60, 61, 69, 62, 65, 60, 60, 66, 61, 63, 65, 59, 63, 65, 67, 72, 62, 81, 59, 63, 67, 66, 64, 60, 67, 66, 62, 62, 70, 68, 69, 66, 63]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Usando este test se pudieron identificar una mayor cantidad de datos atípicos en las mismas columnas que en los test anteriores (Pregnancies, DiabetesPedigreeFunction y Age). Estos valores encontrados con este test sugieren que estos valores son excepcionales y se desvían notablemente de la mayoría de los datos en las respectivas columnas.</p>
+<p>Teniendo en cuenta los resultados de los diferentes tests de detección de valores atípicos, podemos llegar a las siguientes conclusiones:</p>
+<ul class="simple">
+<li><p>La columna ‘DiabetesPedigreeFunction’ parece ser más propensa a tener valores atípicos, ya que fue identificada como atípica por varios tests (Rosner, Dixon, Grubbs y Percentiles).</p></li>
+<li><p>La columna ‘Age’ también mostró algunos valores atípicos, especialmente el valor 81, que fue identificado como atípico por múltiples tests (Dixon, Grubbs y Percentiles).</p></li>
+</ul>
+</section>
+<section id="imputacion-de-los-datos-atipicos">
+<h3>Imputación de los datos atípicos<a class="headerlink" href="#imputacion-de-los-datos-atipicos" title="Link to this heading">#</a></h3>
+<p>Para realizar la imputación de los datos atípicos que identificamos anteriormente, vamos a convertirlos en Nan y luego imputarlos usando IterativeImputer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;DiabetesPedigreeFunction&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mf">2.42</span><span class="p">,</span> <span class="s1">&#39;DiabetesPedigreeFunction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">81</span><span class="p">,</span> <span class="s1">&#39;Age&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pregnancies&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">17</span><span class="p">,</span> <span class="s1">&#39;Pregnancies&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+<span class="n">imputer</span> <span class="o">=</span> <span class="n">IterativeImputer</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_imputed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">imputer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+
+<span class="n">df_imputed</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Pregnancies</th>
+      <th>Glucose</th>
+      <th>BloodPressure</th>
+      <th>SkinThickness</th>
+      <th>Insulin</th>
+      <th>BMI</th>
+      <th>DiabetesPedigreeFunction</th>
+      <th>Age</th>
+      <th>Outcome</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>6.0</td>
+      <td>148.0</td>
+      <td>72.0</td>
+      <td>35.000000</td>
+      <td>221.074988</td>
+      <td>33.6</td>
+      <td>0.627</td>
+      <td>50.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1.0</td>
+      <td>85.0</td>
+      <td>66.0</td>
+      <td>29.000000</td>
+      <td>70.677395</td>
+      <td>26.6</td>
+      <td>0.351</td>
+      <td>31.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>8.0</td>
+      <td>183.0</td>
+      <td>64.0</td>
+      <td>21.624783</td>
+      <td>268.424662</td>
+      <td>23.3</td>
+      <td>0.672</td>
+      <td>32.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>89.0</td>
+      <td>66.0</td>
+      <td>23.000000</td>
+      <td>94.000000</td>
+      <td>28.1</td>
+      <td>0.167</td>
+      <td>21.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>137.0</td>
+      <td>40.0</td>
+      <td>35.000000</td>
+      <td>168.000000</td>
+      <td>43.1</td>
+      <td>2.288</td>
+      <td>33.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>763</th>
+      <td>10.0</td>
+      <td>101.0</td>
+      <td>76.0</td>
+      <td>48.000000</td>
+      <td>180.000000</td>
+      <td>32.9</td>
+      <td>0.171</td>
+      <td>63.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>764</th>
+      <td>2.0</td>
+      <td>122.0</td>
+      <td>70.0</td>
+      <td>27.000000</td>
+      <td>158.301679</td>
+      <td>36.8</td>
+      <td>0.340</td>
+      <td>27.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>765</th>
+      <td>5.0</td>
+      <td>121.0</td>
+      <td>72.0</td>
+      <td>23.000000</td>
+      <td>112.000000</td>
+      <td>26.2</td>
+      <td>0.245</td>
+      <td>30.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>766</th>
+      <td>1.0</td>
+      <td>126.0</td>
+      <td>60.0</td>
+      <td>27.811250</td>
+      <td>175.452360</td>
+      <td>30.1</td>
+      <td>0.349</td>
+      <td>47.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>767</th>
+      <td>1.0</td>
+      <td>93.0</td>
+      <td>70.0</td>
+      <td>31.000000</td>
+      <td>86.521097</td>
+      <td>30.4</td>
+      <td>0.315</td>
+      <td>23.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>768 rows × 9 columns</p>
+</div></div></div>
+</div>
+<p>Finalmente, observamos el dataframe con los datos atípicos imputados.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias-necesarias">Librerías necesarias</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-1-datos-co-2">Punto 1: Datos <span class="math notranslate nohighlight">\(CO_2\)</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#punto-2-diabetes-dataset">Punto 2: Diabetes Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eda-diabetes">EDA Diabetes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-datos-usando-las-diferentes-opciones-de-estimadores">Imputación de datos usando las diferentes opciones de estimadores</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimadores-que-manejan-datos-faltantes">Estimadores que manejan datos faltantes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#identificar-datos-atipicos-para-cada-variable-en-el-dataset">Identificar datos atípicos para cada variable en el dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-los-datos-atipicos">Imputación de los datos atípicos</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
